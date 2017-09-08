@@ -107,3 +107,7 @@ ENV/
 *.iml
 out
 gen
+
+# Keys
+key_a.txt
+key_b.txt
