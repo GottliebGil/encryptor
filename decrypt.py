@@ -2,8 +2,11 @@ import string
 
 
 def do_letter(keys, letter):
-    position = keys['a'].index(letter)
-    return string.lowercase[position]
+    if letter in keys['a']:
+        position = keys['a'].index(letter)
+        return string.lowercase[position]
+    else:
+        return ' '
 
 
 def reorganize(sentence):

@@ -37,27 +37,33 @@ def get_keys():
 
 def print_menu():
     os.system('clear')
-    print "Welcome to the ENCRYPTOR. Select what you wish to do:"
+    print variables['welcome']
+    print "Select what you wish to do:"
     print "1. Encrypt sentence"
     print "2. Decrypt sentence"
     print "3. Generate new keys"
     print "E. Quit program"
 
 
-def print_need_to_generate_keys(keys):
-    os.system('clear')
-    print "WELCOME TO THE ENCRYPTOR. The software couldn't find any existing keys. Therefore, it will generate new ones."
+def print_need_to_generate_keys():
+    print "The software couldn't find any existing keys. Therefore, it will generate new ones."
     raw_input("Press ENTER to generate new keys")
-    keys = generate_keys.do()
+    generate_keys.do()
     raw_input("Keys were generated. Press ENTER to continue")
 
 
+variables = {
+    'welcome': 'WELCOME TO THE ENCRYPTOR'
+}
+
+
 def main(keys):
+    print variables['welcome']
     if len(keys['a']) == 0:
-        print_need_to_generate_keys(keys)
+        print_need_to_generate_keys()
     print_menu()
     selection = raw_input()
-    while selection != 'E':
+    while selection != 'e' and selection != 'E':
         os.system('clear')
         if selection == '1':
             print ' --- ENCRYPTION ---'

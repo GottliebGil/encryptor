@@ -4,8 +4,11 @@ import clipboard
 
 
 def do_letter(keys, letter):
-    position = string.lowercase.index(letter)
-    return keys['a'][position]
+    if letter in string.lowercase:
+        position = string.lowercase.index(letter)
+        return keys['a'][position]
+    else:
+        return ' '
 
 
 def do_sentence(keys, sentence):
@@ -24,7 +27,6 @@ def do_sentence(keys, sentence):
             encrypted += do_letter(keys, char)
         if should_enter_fabricated_char > 2:
             count += 1
-            should_enter_fabricated_char = random.randint(1, 10)
             encrypted += keys['b'][random.randint(0, len(keys['b']) - 1)]
     return encrypted
 
