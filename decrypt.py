@@ -8,7 +8,7 @@ def do_letter(keys, letter):
         position = keys['a'].index(letter)
         return string.lowercase[position]
     else:
-        return ' '
+        return ''
 
 
 def reorganize(sentence):
@@ -24,8 +24,8 @@ def reorganize(sentence):
 def do_sentence(keys, sentence):
     decrypted = ''
     for char in sentence:
-        if char in keys['b'][0:5] or char in keys['a']:
-            decrypted += do_letter(keys, char)
+        decrypted += do_letter(keys, char)
+
     return decrypted
 
 
