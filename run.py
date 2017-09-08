@@ -85,5 +85,5 @@ def main(keys):
         selection = raw_input()
     os.system('clear')
 
-
-main(get_keys())
+if __name__ == '__main__':
+    main(get_keys())
