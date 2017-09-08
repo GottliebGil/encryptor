@@ -1,6 +1,6 @@
 import string
 import random
-
+import os
 
 def generate_key(keys):
     val = string.printable.rstrip()
@@ -16,6 +16,12 @@ def generate_key(keys):
 
 
 def do():
+    if os.path.exists('key_a.txt') and os.path.exists('key_b.txt'):
+        new_dir_path = 'old_keys/%s' % os.path.getctime('key_a.txt')
+        os.makedirs(new_dir_path)
+        os.rename('key_a.txt', "%s/key_a.txt" % new_dir_path)
+        os.rename('key_b.txt', "%s/key_b.txt" % new_dir_path)
+
     keys = {
         'a': [],
         'b': []
