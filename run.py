@@ -83,6 +83,7 @@ def main(keys):
         raw_input("Press ENTER to continue")
         print_menu()
         selection = raw_input()
+    os.system('clear')
 
 
 main(get_keys())
