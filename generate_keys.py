@@ -4,8 +4,7 @@ import os
 
 
 def generate_key(keys):
-    val = string.printable.rstrip()
-    val = [x for x in val]
+    val = [x for x in string.printable.rstrip()]
     random.shuffle(val)
     val = [x for x in val if x not in keys['a'] and x not in keys['b']]
     val = ''.join(val)
