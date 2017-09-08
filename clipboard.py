@@ -25,6 +25,7 @@ def paste(selection=None):
     else:
         return outdata
 
+
 def copy(text):
     with open(os.devnull, 'wb') as devnull:
         pipe = subprocess.Popen(COPY_CMD, stdin=subprocess.PIPE, stderr=devnull)
@@ -34,7 +35,8 @@ def copy(text):
     else:
         return True
 
+
 def paste_table():
-	text = paste()
-	data = list(csv.reader(text.split('\n'), delimiter='\t'))
-	return data
+    text = paste()
+    data = list(csv.reader(text.split('\n'), delimiter='\t'))
+    return data
