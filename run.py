@@ -29,7 +29,6 @@ def get_keys():
 
 keys = get_keys()
 
-
 enc = encrypt.do(keys, "Hi how are you")
 print enc
 print decrypt.do(keys, enc)

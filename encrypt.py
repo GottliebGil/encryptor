@@ -1,5 +1,6 @@
 import string
 import random
+import clipboard
 
 
 def do_letter(keys, letter):
@@ -41,4 +42,5 @@ def reorganize(sentence):
 def do(keys, sentence):
     encrypted = do_sentence(keys, sentence)
     encrypted = reorganize(encrypted)
+    clipboard.copy(encrypted)
     return encrypted
