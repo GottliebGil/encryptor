@@ -19,7 +19,7 @@ def do_sentence(keys, sentence):
     count = 0
     for char in sentence:
         should_enter_fabricated_char = random.randint(1, 10)
-        if char == ' ':  # adding fabrication
+        if char == ' ':
             if count == 0:
                 encrypted += keys['b'][random.randint(5, len(keys['b']) - 1)]
             else:
