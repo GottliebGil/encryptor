@@ -5,7 +5,7 @@ import clipboard
 
 def do_letter(keys, letter):
     if letter == ' ':
-        return keys['b'][random.randint(0, 5)]
+        return keys['b'][random.randint(0, 4)]
     elif letter in string.lowercase:
         position = string.lowercase.index(letter)
         return keys['a'][position]
